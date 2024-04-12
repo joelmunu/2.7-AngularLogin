@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service/api.service';
+import { AuthService } from '../service/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -19,14 +20,15 @@ export class LoginComponent implements OnInit {
     password: ""
   }
 
-  constructor(private api: ApiService, private router: Router) {}
+  constructor(private api: ApiService, private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
   }
 
   Login(form: LoginData) {
     this.api.Login(form).subscribe(data =>  {
-      console.log(data);
+      this.authService.setToken(data);
+      this.router.navigate(["/home"])
     });
   }
 
