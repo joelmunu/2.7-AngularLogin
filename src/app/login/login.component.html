@@ -1,1 +1,38 @@
-<p>login works!</p>
+<div>
+    <article class="card-body">
+      <h2>Inicio de sesión</h2>
+      <form>
+        <div>
+          <div>
+            <input
+              [(ngModel)]="loginForm.username"
+              name="username"
+              placeholder="Nombre de usuario"
+              type="text"
+            />
+          </div>
+        </div>
+        <br />
+        <div>
+          <div>
+            <input
+              [(ngModel)]="loginForm.password"
+              name="password"
+              placeholder="Contraseña"
+              type="password"
+            />
+          </div>
+          <br />
+        </div>
+        <div>
+          <button (click)="Login(loginForm)">
+            Iniciar sesión
+          </button>
+        </div>
+        <p>
+          <a (click)="navigateToRegister()" class="btn">Crea una nueva cuenta aquí</a>
+        </p>
+      </form>
+    </article>
+  </div>
+  
