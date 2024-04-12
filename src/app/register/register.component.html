@@ -1,0 +1,87 @@
+<div>
+    <div>
+      <div>
+        <form role="form">
+          <h2>Registro</h2>
+          <div>
+            <div>
+              <div>
+                <input
+                  type="text"
+                  [(ngModel)]="RegisterForm.firstname"
+                  name="first_name"
+                  id="first_name"
+                  placeholder="Nombre"
+                />
+              </div>
+            </div>
+            <br />
+            <div>
+              <div>
+                <input
+                  type="text"
+                  [(ngModel)]="RegisterForm.lastname"
+                  name="last_name"
+                  id="last_name"
+                  placeholder="Apellidos"
+                />
+              </div>
+            </div>
+          </div>
+          <br />
+          <div>
+            <input
+              type="text"
+              name="display_name"
+              [(ngModel)]="RegisterForm.username"
+              id="display_name"
+              placeholder="Nombre de usuario"
+            />
+          </div>
+          <br />
+          <div>
+            <input
+              type="email"
+              name="email"
+              [(ngModel)]="RegisterForm.email"
+              id="email"
+              placeholder="Email"
+            />
+          </div>
+          <br />
+          <div>
+            <input
+              type="text"
+              name="country"
+              [(ngModel)]="RegisterForm.country"
+              id="country"
+              placeholder="País"
+            />
+          </div>
+          <br />
+          <div>
+            <div>
+              <input
+                type="password"
+                [(ngModel)]="RegisterForm.password"
+                name="password"
+                id="password"
+                placeholder="Contraseña"
+              />
+            </div>
+          </div>
+           <br />
+          <div>
+            <div>
+              <input
+                type="submit"
+                (click)="Register(RegisterForm)"
+                value="Registrarse"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
