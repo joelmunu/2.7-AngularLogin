@@ -1,38 +1,34 @@
-<div>
-    <article class="card-body">
+<div class="container">
+    <div class="card-body">
       <h2>Inicio de sesión</h2>
       <form>
-        <div>
-          <div>
-            <input
-              [(ngModel)]="loginForm.username"
-              name="username"
-              placeholder="Nombre de usuario"
-              type="text"
-            />
-          </div>
+        <div class="form-group">
+          <input
+            [(ngModel)]="loginForm.username"
+            name="username"
+            placeholder="Nombre de usuario"
+            type="text"
+            class="form-control"
+          />
         </div>
-        <br />
-        <div>
-          <div>
-            <input
-              [(ngModel)]="loginForm.password"
-              name="password"
-              placeholder="Contraseña"
-              type="password"
-            />
-          </div>
-          <br />
+        <div class="form-group">
+          <input
+            [(ngModel)]="loginForm.password"
+            name="password"
+            placeholder="Contraseña"
+            type="password"
+            class="form-control"
+          />
         </div>
-        <div>
-          <button (click)="Login(loginForm)">
+        <div class="form-group">
+          <button (click)="Login(loginForm)" class="btn btn-primary btn-block">
             Iniciar sesión
           </button>
         </div>
-        <p>
-          <a (click)="navigateToRegister()" class="btn">Crea una nueva cuenta aquí</a>
+        <p class="text-center">
+          <a (click)="navigateToRegister()" class="btn btn-link">Crea una nueva cuenta aquí</a>
         </p>
       </form>
-    </article>
+    </div>
   </div>
   

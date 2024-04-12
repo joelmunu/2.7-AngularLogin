@@ -41,7 +41,7 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(["/home"])
       });
     } else {
-      alert('All fields are required');
+      alert('ERROR:\nTodos los campos son requeridos.');
     }
   }
 

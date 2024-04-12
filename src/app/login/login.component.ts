@@ -11,25 +11,31 @@ import { LoginData } from '../models/login.interface';
   standalone: true,
   imports: [HttpClientModule, FormsModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css',
 })
 export class LoginComponent implements OnInit {
-
   loginForm = {
-    username: "",
-    password: ""
-  }
+    username: '',
+    password: '',
+  };
 
-  constructor(private api: ApiService, private authService: AuthService, private router: Router) {}
+  constructor(
+    private api: ApiService,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   Login(form: LoginData) {
-    this.api.Login(form).subscribe(data =>  {
-      this.authService.setToken(data);
-      this.router.navigate(["/home"])
-    });
+    if (this.loginForm.username !== '' || this.loginForm.password !== '') {
+      this.api.Login(form).subscribe((data) => {
+        this.authService.setToken(data);
+        this.router.navigate(['/home']);
+      });
+    } else {
+      alert('ERROR:\nTodos los campos son requeridos.');
+    }
   }
 
   navigateToRegister() {
